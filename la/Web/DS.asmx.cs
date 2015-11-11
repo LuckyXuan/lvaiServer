@@ -6,6 +6,8 @@ using System.Web.Services;
 using la.DataServer;
 using System.Web.Script.Services;
 using System.IO;
+using System.Data;
+using la.BLL;
 namespace la.Web
 {
     /// <summary>
@@ -196,7 +198,48 @@ namespace la.Web
             result = result + "\"data\":{}}";
             return result;
         }
+        /// <summary>
+        /// 获取旅行列表
+        /// </summary>
+        /// <param name="gettravel"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public string GetTravelList(string gettravelnumber)
+        {
+            string result = "{\"status\":";
+            int number = Convert.ToInt32(gettravelnumber);
+            DataSet ds = new travel().GetListByPage("","",number-4,number);
+            try
+            {
+                if (ds == null)
+                {
+                    result = result + "\"success\",";
+                    result = result + "\"msg\":\"没有找到更多信息\",";
+                    result = result + "\"data\":{}}";
+                    return result;
+                }
+                else
+                {
+                    List<Model.travel> Ts = new List<Model.travel>();
+                    Ts = new travel().DataTableToList(ds.Tables[0]);                   
+                    string data = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(Ts);
+                    result = result + "\"success\",";
+                    result = result + "\"msg\":\"success\",";
+                    result = result + "\"data\":";
+                    result = result + data;
+                    result = result + "}";
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = result + "\"faild\",";
+                result = result + "\"msg\":\"" + ex.Message + "\",";
+                result = result + "\"data\":{}}";
+                return result;
 
+            }
+        }
 
 
 
@@ -577,5 +620,29 @@ namespace la.Web
             return data;
         }
 
+        /// <summary>
+        /// 删除一个相册
+        /// </summary>
+        /// <param name="tel"></param>
+        /// <param name="album_id"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public string deleteAlbum(string tel, string album_id)
+        {
+            string result = "{\"status\":";
+            if (new la.BLL.album().Delete(Convert.ToInt32(album_id), tel))
+            {
+                result = result + "\"success\",";
+                result = result + "\"msg\":\"success\",";
+                result = result + "\"data\":";
+                result = result + "{}";
+                result = result + "}";
+                return result;
+            }
+            result = result + "\"faild\",";
+            result = result + "\"msg\":\"要删除的数据不存在\",";
+            result = result + "\"data\":{}}";
+            return result;
+        }
     }
 }

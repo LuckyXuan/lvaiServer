@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using la.Model;
 using la.BLL;
+using System.Data;
 
 
 namespace la.DataServer
@@ -29,5 +30,7 @@ namespace la.DataServer
             return albumList;
         }
 
+
+  
     }
 }

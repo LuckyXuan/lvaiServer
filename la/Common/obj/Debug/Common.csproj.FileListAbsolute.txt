@@ -31,3 +31,12 @@ E:\Travel\lvai\la\Common\bin\Debug\OpenSmtp.dll
 E:\Travel\lvai\la\Common\bin\Debug\OWC10Chart.dll
 E:\Travel\lvai\la\Common\obj\Debug\la.Common.dll
 E:\Travel\lvai\la\Common\obj\Debug\la.Common.pdb
+D:\Git\git\lvai1.0\lvaiServer\la\Common\bin\Debug\la.Common.dll
+D:\Git\git\lvai1.0\lvaiServer\la\Common\bin\Debug\la.Common.pdb
+D:\Git\git\lvai1.0\lvaiServer\la\Common\bin\Debug\COM.Excel.dll
+D:\Git\git\lvai1.0\lvaiServer\la\Common\bin\Debug\Excel.dll
+D:\Git\git\lvai1.0\lvaiServer\la\Common\bin\Debug\OpenSmtp.dll
+D:\Git\git\lvai1.0\lvaiServer\la\Common\bin\Debug\OWC10Chart.dll
+D:\Git\git\lvai1.0\lvaiServer\la\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\Git\git\lvai1.0\lvaiServer\la\Common\obj\Debug\la.Common.dll
+D:\Git\git\lvai1.0\lvaiServer\la\Common\obj\Debug\la.Common.pdb
