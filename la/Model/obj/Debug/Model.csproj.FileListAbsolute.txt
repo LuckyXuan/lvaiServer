@@ -19,3 +19,7 @@ D:\Git\git\lvai1.0\lvaiServer\la\Model\bin\Debug\la.Model.dll
 D:\Git\git\lvai1.0\lvaiServer\la\Model\bin\Debug\la.Model.pdb
 D:\Git\git\lvai1.0\lvaiServer\la\Model\obj\Debug\la.Model.dll
 D:\Git\git\lvai1.0\lvaiServer\la\Model\obj\Debug\la.Model.pdb
+E:\lvai\lvaiServer\la\Model\bin\Debug\la.Model.dll
+E:\lvai\lvaiServer\la\Model\bin\Debug\la.Model.pdb
+E:\lvai\lvaiServer\la\Model\obj\Debug\la.Model.dll
+E:\lvai\lvaiServer\la\Model\obj\Debug\la.Model.pdb

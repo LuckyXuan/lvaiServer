@@ -40,3 +40,12 @@ D:\Git\git\lvai1.0\lvaiServer\la\DBUtility\bin\Debug\System.Data.SQLite.DLL
 D:\Git\git\lvai1.0\lvaiServer\la\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
 D:\Git\git\lvai1.0\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.dll
 D:\Git\git\lvai1.0\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.pdb
+E:\lvai\lvaiServer\la\DBUtility\bin\Debug\la.DBUtility.dll
+E:\lvai\lvaiServer\la\DBUtility\bin\Debug\la.DBUtility.pdb
+E:\lvai\lvaiServer\la\DBUtility\bin\Debug\IBatisNet.Common.dll
+E:\lvai\lvaiServer\la\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+E:\lvai\lvaiServer\la\DBUtility\bin\Debug\MySql.Data.dll
+E:\lvai\lvaiServer\la\DBUtility\bin\Debug\System.Data.SQLite.DLL
+E:\lvai\lvaiServer\la\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+E:\lvai\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.dll
+E:\lvai\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.pdb
