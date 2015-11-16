@@ -57,6 +57,7 @@
     <Compile Include="UCSRestRequest.cs" />
     <Compile Include="UserInfoServer.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="VideoServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

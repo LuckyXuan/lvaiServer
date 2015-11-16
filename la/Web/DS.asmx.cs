@@ -522,6 +522,7 @@ namespace la.Web
             return result;
 
         }
+        
         /// <summary>
         /// 获取个人中心的语音信息。
         /// </summary>
@@ -563,6 +564,47 @@ namespace la.Web
             }
         }
 
+
+        /// <summary>
+        /// 获取个人中心的录像信息。
+        /// </summary>
+        /// <param name="tel"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public string getVideo(string tel)
+        {
+            string result = "{\"status\":";
+            Model.video userVideo = DataServer.VideoServer.getLastVideo(tel);
+
+            try
+            {
+                if (userVideo == null)
+                {
+                    result = result + "\"success\",";
+                    result = result + "\"msg\":\"没有找到语音信息\",";
+                    result = result + "\"data\":{}}";
+                    return result;
+                }
+                else
+                {
+                    Model.video vd = userVideo;
+                    string data = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(vd);
+                    result = result + "\"success\",";
+                    result = result + "\"msg\":\"success\",";
+                    result = result + "\"data\":";
+                    result = result + data;
+                    result = result + "}";
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = result + "\"faild\",";
+                result = result + "\"msg\":\"" + ex.Message + "\",";
+                result = result + "\"data\":{}}";
+                return result;
+            }
+        }
 
         /// <summary>
         /// 获取车辆信息。

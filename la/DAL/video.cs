@@ -312,7 +312,29 @@ namespace la.DAL
 
 		#endregion  BasicMethod
 		#region  ExtensionMethod
-
+        /// <summary>
+        /// 获取最后一条语音信息。
+        /// </summary>
+        /// <param name="tel"></param>
+        /// <returns></returns>
+        public Model.video getLastVideo(string tel)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select  top 1 video_ID,user_telphone,video_url,video_uploadtime,video_comment,video_state from video");
+            strSql.Append(" where user_telphone=@user_telphone order by video_uploadtime desc ");
+            SqlParameter[] parameters = { new SqlParameter("@user_telphone", SqlDbType.VarChar, 20) };
+            parameters[0].Value = tel;
+            la.Model.video ad = new la.Model.video();
+            DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return DataRowToModel(ds.Tables[0].Rows[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }

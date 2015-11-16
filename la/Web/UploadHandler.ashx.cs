@@ -87,44 +87,7 @@ namespace la.Web
             }
         }
 
-        /// <summary>
-        /// 上传音频。
-        /// </summary>
-        /// <param name="context"></param>
-        private void UploadUserAudio(HttpContext context)
-        {
-            string tel = context.Request.Form["tel"].ToString();
-            string filename = context.Request.Form["filename"].ToString();
-            filename = Path.GetFileName(filename);
-            string dirPath = HttpContext.Current.Server.MapPath("~/UploadFile/UserAudio/");
-            string filePath = dirPath + filename;
-            if (!Directory.Exists(dirPath))
-            {
-                Directory.CreateDirectory(dirPath);
-            }
-            BLL.audio aBLL = new BLL.audio();
-            Model.audio a = new Model.audio();
-            a.user_telphone = tel;
-            a.audio_state = "未审核";
-            a.audio_time = DateTime.Now;
-            a.audio_url = "/UploadFile/UserAudio/" + filename;
-            a.audio_comment = "";
-            aBLL.Add(a);
-            string Pic_Path = filePath;
-            try
-            {
-                HttpFileCollection files = context.Request.Files;
-                HttpPostedFile file = context.Request.Files[0];
-                file.SaveAs(Pic_Path);
-            }
-            catch (Exception ex)
-            {
-                context.Response.Write("{\"retStatus\":0,\"Msg\":\"" + ex.Message + "\",\"data\":{}}");
-            }
-            string result = "{\"Status\":\"success\",\"Msg\":\"上传成功\",\"data\":\"" + "\"}";
-            context.Response.Write(result);
-
-        }
+      
 
         ///<summary>
         ///上传用户个人中心背景。
@@ -164,17 +127,54 @@ namespace la.Web
             string result = "{\"Status\":\"success\",\"Msg\":\"上传成功\",\"data\":\"" + "\"}";
             context.Response.Write(result);
         }
-
+       
+        /// <summary>
+        /// 上传音频。
+        /// </summary>
+        /// <param name="context"></param>
+        private void UploadUserAudio(HttpContext context)
+        {
+            string tel = context.Request.Form["tel"].ToString();
+            string filename = context.Request.Form["filename"].ToString();
+            filename = Path.GetFileName(filename);
+            string dirPath = HttpContext.Current.Server.MapPath("~/UploadFile/UserAudio/");
+            string filePath = dirPath + filename;
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+            BLL.audio aBLL = new BLL.audio();
+            Model.audio a = new Model.audio();
+            a.user_telphone = tel;
+            a.audio_state = "未审核";
+            a.audio_time = DateTime.Now;
+            a.audio_url = "/UploadFile/UserAudio/" + filename;
+            a.audio_comment = "";
+            aBLL.Add(a);
+            string Pic_Path = filePath;
+            try
+            {
+                HttpFileCollection files = context.Request.Files;
+                HttpPostedFile file = context.Request.Files[0];
+                file.SaveAs(Pic_Path);
+            }
+            catch (Exception ex)
+            {
+                context.Response.Write("{\"retStatus\":0,\"Msg\":\"" + ex.Message + "\",\"data\":{}}");
+            }
+            string result = "{\"Status\":\"success\",\"Msg\":\"上传成功\",\"data\":\"" + "\"}";
+            context.Response.Write(result);
+        }
         /// <summary>
         /// 上传视频。
         /// </summary>
         private void UploadVideo(HttpContext context)
         {
             string tel = context.Request.Form["tel"].ToString();
-            string type = context.Request.Form["type"].ToString();
+            string filename = context.Request.Form["filename"].ToString();
+            filename = Path.GetFileName(filename);
             string dirPath = HttpContext.Current.Server.MapPath("~/UploadFile/UserVideo/");
-            string fileName = DateTime.Now.ToString("yyyyMMddHHmmssffff") + type;
-            string filePath = dirPath + fileName;//file.FileName;
+            string filePath = dirPath + filename;
             if (!Directory.Exists(dirPath))
             {
                 Directory.CreateDirectory(dirPath);
@@ -184,7 +184,7 @@ namespace la.Web
             v.user_telphone = tel;
             v.video_state = "未审核";
             v.video_uploadtime = DateTime.Now;
-            v.video_url = filePath;
+            v.video_url = "/UploadFile/UserAudio/" + filename;
             v.video_comment = "";
             vBLL.Add(v);
             string Pic_Path = filePath;
@@ -201,6 +201,10 @@ namespace la.Web
             string result = "{\"Status\":\"success\",\"Msg\":\"上传成功\",\"data\":\"" + "\"}";
             context.Response.Write(result);
         }
+
+
+
+
         /// <summary>
         /// 上传用户头像base64编码形式。
         /// liu
