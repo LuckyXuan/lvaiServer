@@ -46,6 +46,5 @@ E:\lvai\lvaiServer\la\DBUtility\bin\Debug\IBatisNet.Common.dll
 E:\lvai\lvaiServer\la\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
 E:\lvai\lvaiServer\la\DBUtility\bin\Debug\MySql.Data.dll
 E:\lvai\lvaiServer\la\DBUtility\bin\Debug\System.Data.SQLite.DLL
-E:\lvai\lvaiServer\la\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
 E:\lvai\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.dll
 E:\lvai\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.pdb

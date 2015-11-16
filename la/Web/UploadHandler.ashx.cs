@@ -6,6 +6,7 @@ using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.IO;
 using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
 
 namespace la.Web
@@ -76,6 +77,11 @@ namespace la.Web
                 case "uploadTravelPhoto":
                     {
                         RealseTravelPhoto(context);
+                        break;
+                    }
+                case "addLoadTravel":
+                    {
+                        addLoadTravel(context);
                         break;
                     }
             }
@@ -330,7 +336,7 @@ namespace la.Web
                 HttpFileCollection files = context.Request.Files;
                 //保存缩略图
                 HttpPostedFile file = context.Request.Files[0];
-               // string fileName = DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jpg";
+                // string fileName = DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jpg";
                 //string filePath = dirPath + "thumb_" + fileName;//file.FileName;
                 string filePath = dirPath + filename;
                 file.SaveAs(filePath);
@@ -501,7 +507,7 @@ namespace la.Web
         }
 
 
-        #region  2015-11-2 liu
+        #region  2015-11-2 liu  上传用户相册
         /**
          * 上传用户相册。
          * */
@@ -557,7 +563,69 @@ namespace la.Web
         }
         #endregion
 
+        #region 2015-11-16 liu  添加旅行
+        /// <summary>
+        /// 添加旅行。
+        /// </summary>
+        private void addLoadTravel(HttpContext context)
+        {
+            string dirPath = context.Server.MapPath("~/UploadFile/TravelPhoto/");
 
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+
+
+            Dictionary<string, string> dic = null;
+            try
+            {
+                dic = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(context.Request.Form["travel"].ToString());
+                context.Response.Write(dic["pic1"].ToString());
+                context.Response.Write(dic["pic2"].ToString());
+                context.Response.Write(dic["pic3"].ToString());
+
+                Model.travel t = new Model.travel();
+                t.promoter_userid = dic["promoter_userid"].ToString();
+                t.release_time = DateTime.Now;
+                t.Destination = dic["destination"].ToString();
+                t.startplace = dic["startplace"].ToString();
+                t.return_time = Convert.ToDateTime(dic["return_time"].ToString());
+                t.start_time = Convert.ToDateTime(dic["start_time"].ToString());
+                t.transportation = dic["transportation"].ToString();
+                t.fee = dic["fee"].ToString();
+                t.travle_theme = dic["travle_theme"].ToString();
+                t.travle_personcount = Convert.ToInt32(dic["travle_personcount"].ToString());
+                t.companion_condition = dic["companion_condition"].ToString();
+                t.travle_msg = dic["travle_msg"].ToString();
+                t.pic1 = Path.GetFileName(dic["pic1"].ToString()) == "" ? "" : "/UploadFile/TravelPhoto/" + Path.GetFileName(dic["pic1"].ToString());
+                t.pic2 = Path.GetFileName(dic["pic2"].ToString()) == "" ? "" : "/UploadFile/TravelPhoto/" + Path.GetFileName(dic["pic2"].ToString());
+                t.pic3 = Path.GetFileName(dic["pic3"].ToString()) == "" ? "" : "/UploadFile/TravelPhoto/" + Path.GetFileName(dic["pic3"].ToString());
+                t.income_condition = dic["income_condition"].ToString();
+                t.car_condition = dic["car_condition"].ToString();
+                t.height_condition = dic["height_condition"].ToString();
+                t.credit_condition = dic["credit_condition"].ToString();
+                t.wantget_gift = dic["wantget_gift"].ToString();
+                t.wantsend_gift = dic["wantsend_gift"].ToString();
+                t.reg_fee = Convert.ToDecimal(dic["reg_fee"].ToString());
+                new BLL.travel().Add(t);
+                HttpFileCollection files = context.Request.Files;
+                for (int index = 0; index < files.Count; index++)
+                {
+                    HttpPostedFile file = context.Request.Files[index];
+                    string filePath = dirPath + Path.GetFileName(file.FileName);//file.FileName;
+                    file.SaveAs(filePath);
+                };
+                string result = "{\"Status\":\"success\",\"Msg\":\"添加成功\",\"data\":{}}";
+                context.Response.Write(result);
+            }
+            catch (Exception ex)
+            {
+                string result = "{\"Status\":\"faild\",\"Msg\":\""+ex.Message+"\",\"data\":{}}";
+                context.Response.Write(result);
+            }
+        }
+        #endregion
 
 
 
