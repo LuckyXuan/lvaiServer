@@ -48,3 +48,11 @@ E:\lvai\lvaiServer\la\DBUtility\bin\Debug\MySql.Data.dll
 E:\lvai\lvaiServer\la\DBUtility\bin\Debug\System.Data.SQLite.DLL
 E:\lvai\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.dll
 E:\lvai\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.pdb
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\bin\Debug\la.DBUtility.dll
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\bin\Debug\la.DBUtility.pdb
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\bin\Debug\IBatisNet.Common.dll
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\bin\Debug\MySql.Data.dll
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\bin\Debug\System.Data.SQLite.DLL
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.dll
+D:\projects\LvAi\Server\lvaiServer\la\DBUtility\obj\Debug\la.DBUtility.pdb

@@ -48,3 +48,11 @@ E:\lvai\lvaiServer\la\Common\bin\Debug\OpenSmtp.dll
 E:\lvai\lvaiServer\la\Common\bin\Debug\OWC10Chart.dll
 E:\lvai\lvaiServer\la\Common\obj\Debug\la.Common.dll
 E:\lvai\lvaiServer\la\Common\obj\Debug\la.Common.pdb
+D:\projects\LvAi\Server\lvaiServer\la\Common\bin\Debug\la.Common.dll
+D:\projects\LvAi\Server\lvaiServer\la\Common\bin\Debug\la.Common.pdb
+D:\projects\LvAi\Server\lvaiServer\la\Common\bin\Debug\COM.Excel.dll
+D:\projects\LvAi\Server\lvaiServer\la\Common\bin\Debug\Excel.dll
+D:\projects\LvAi\Server\lvaiServer\la\Common\bin\Debug\OpenSmtp.dll
+D:\projects\LvAi\Server\lvaiServer\la\Common\bin\Debug\OWC10Chart.dll
+D:\projects\LvAi\Server\lvaiServer\la\Common\obj\Debug\la.Common.dll
+D:\projects\LvAi\Server\lvaiServer\la\Common\obj\Debug\la.Common.pdb

@@ -23,3 +23,7 @@ E:\lvai\lvaiServer\la\Model\bin\Debug\la.Model.dll
 E:\lvai\lvaiServer\la\Model\bin\Debug\la.Model.pdb
 E:\lvai\lvaiServer\la\Model\obj\Debug\la.Model.dll
 E:\lvai\lvaiServer\la\Model\obj\Debug\la.Model.pdb
+D:\projects\LvAi\Server\lvaiServer\la\Model\bin\Debug\la.Model.dll
+D:\projects\LvAi\Server\lvaiServer\la\Model\bin\Debug\la.Model.pdb
+D:\projects\LvAi\Server\lvaiServer\la\Model\obj\Debug\la.Model.dll
+D:\projects\LvAi\Server\lvaiServer\la\Model\obj\Debug\la.Model.pdb
